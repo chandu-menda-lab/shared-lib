@@ -9,6 +9,7 @@
   "files": [
     "dist/"
   ],
+  "typings": "public-api.d.ts",
   "scripts": {
     "build": "ng-packagr -p ng-package.json",
     "test": "echo \"No tests configured\"",
