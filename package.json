@@ -1,30 +1,36 @@
 {
   "name": "@example/shared-lib",
   "version": "1.0.0",
+  "description": "Shared Angular library",
+  "author": "",
   "license": "MIT",
-  "typings": "public-api.d.ts",
-  "main": "fesm2022/shared-lib.mjs",
-  "module": "fesm2022/shared-lib.mjs",
+
+  "main": "dist/bundles/shared-lib.umd.js",
+  "module": "dist/fesm2022/shared-lib.mjs",
+  "typings": "dist/public-api.d.ts",
+
   "exports": {
     ".": {
-      "import": "./fesm2022/shared-lib.mjs",
-      "types": "./public-api.d.ts"
+      "import": "./dist/fesm2022/shared-lib.mjs",
+      "types": "./dist/public-api.d.ts"
     }
   },
+
   "files": [
-    "fesm2022/",
-    "bundles/",
-    "public-api.d.ts"
+    "dist/"
   ],
+
+  "scripts": {
+    "build": "npx ng-packagr -p ng-package.json",
+    "prepare": "npm run build"
+  },
+
   "peerDependencies": {
     "@angular/core": "^18.0.0",
     "@angular/common": "^18.0.0"
   },
+
   "devDependencies": {
     "ng-packagr": "^18.0.0"
-  },
-  "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "prepare": "npm run build"
   }
 }
