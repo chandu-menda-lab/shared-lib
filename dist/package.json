@@ -1,10 +1,7 @@
 {
   "name": "@example/shared-lib",
   "version": "1.0.0",
-  "description": "Shared Angular library",
-  "author": "",
-  "license": "MIT",
-  "main": "dist/bundles/shared-lib.umd.js",
+  "main": "dist/fesm2022/shared-lib.mjs",
   "module": "fesm2022/example-shared-lib.mjs",
   "typings": "index.d.ts",
   "exports": {
@@ -23,8 +20,8 @@
     "dist/"
   ],
   "peerDependencies": {
-    "@angular/core": "^18.0.0",
-    "@angular/common": "^18.0.0"
+    "@angular/common": "^18.0.0",
+    "@angular/core": "^18.0.0"
   },
   "sideEffects": false,
   "dependencies": {
