@@ -1,29 +1,30 @@
 {
   "name": "@example/shared-lib",
   "version": "1.0.0",
-  "description": "Reusable shared Angular components, services and pipes",
-  "main": "bundles/shared-lib.umd.js",
-  "module": "fesm2015/shared-lib.js",
-  "author": "Generated",
   "license": "MIT",
-  "files": [
-    "dist/"
-  ],
   "typings": "public-api.d.ts",
-  "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "test": "echo \"No tests configured\"",
-    "prepublishOnly": "npm run build"
+  "main": "fesm2022/shared-lib.mjs",
+  "module": "fesm2022/shared-lib.mjs",
+  "exports": {
+    ".": {
+      "import": "./fesm2022/shared-lib.mjs",
+      "types": "./public-api.d.ts"
+    }
   },
+  "files": [
+    "fesm2022/",
+    "bundles/",
+    "public-api.d.ts"
+  ],
   "peerDependencies": {
-    "@angular/common": "^18.0.0",
-    "@angular/core": "^18.0.0"
+    "@angular/core": "^18.0.0",
+    "@angular/common": "^18.0.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^18.0.0",
-    "@angular/compiler": "^18.0.0",
-    "@angular/compiler-cli": "^18.0.0",
-    "ng-packagr": "^18.0.0",
-    "typescript": "^5.4.5"
+    "ng-packagr": "^18.0.0"
+  },
+  "scripts": {
+    "build": "ng-packagr -p ng-package.json",
+    "prepare": "npm run build"
   }
 }
